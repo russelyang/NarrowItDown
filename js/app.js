@@ -20,7 +20,7 @@
 				});
 		};
 
-		list.onRemove = function(index) {
+		list.removeItem = function(index) {
 			list.foundItems.splice(index, 1);
 		}
 	}
