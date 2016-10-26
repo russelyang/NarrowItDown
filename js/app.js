@@ -21,13 +21,13 @@
 		service.getMatchedMenuItems = function(searchTerm) {
 
 			$http.get(BASE_URL + '/menu_items.json').then(function(result) {
+				var promise = new Promise();
 				var items = result.data.menu_items;
 				var founds= items.filter(function(item) {
 					return item.description.indexOf(searchTerm) > -1;
 				});
-				return new Promise(function(resolve) {
-					resolve(founds);
-				});
+				promise.resolve(founds);
+				return promise;				
 			});
 		}
 	}
