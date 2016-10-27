@@ -48,7 +48,7 @@
 		};
 
 		list.removeItem = function(index) {
-			list.foundItems.splice(index, 1);
+			narrowItDownService.removeItem(index);
 		}
 	}
 
@@ -73,19 +73,24 @@
 	}
 
 
-	NarrowItDownService.$inject = ["$http", "BASE_URL", "$q"];
+	NarrowItDownService.$inject = ["$http", "BASE_URL"];
 	function NarrowItDownService($http, BASE_URL, $q) {
 		var service = this;
 
+		service.founds = [];
 		service.getMatchedMenuItems = function(searchTerm) {
 
 			return $http.get(BASE_URL + '/menu_items.json').then(function(result) {
 				var items = result.data.menu_items;
-				var founds= items.filter(function(item) {
+				service.founds= items.filter(function(item) {
 					return item.description.indexOf(searchTerm) > -1;
 				});
-				return $q.resolve(founds);
+				return service.founds;
 			});
+		}
+
+		service.removeItem = function(index) {
+			service.founds.splice(index,1);
 		}
 	}
 
