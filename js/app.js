@@ -5,6 +5,11 @@
 		.controller('NarrowItDownController', NarrowItDownController)
 		.service('NarrowItDownService', NarrowItDownService)
 		.directive('foundItems', FoundItemsDirective)
+		.directive('itemsLoaderIndicator', function() {
+			return {
+				templateUrl: 'loader/itemsloaderindicator.template.html'
+			}
+		})
 		.constant('BASE_URL', 'https://davids-restaurant.herokuapp.com');
 
 	NarrowItDownController.$inject = ['$scope', 'NarrowItDownService'];
