@@ -6,8 +6,24 @@
 		.service('NarrowItDownService', NarrowItDownService)
 		.directive('foundItems', FoundItemsDirective)
 		.directive('itemsLoaderIndicator', function() {
+
+			function link(scope, element, attributes) {
+				console.log(scope);
+				scope.$watch("list.loading", function(newValue, oldValue) {
+					if (newValue) {
+						//show loader
+						element.find('div').css("display", "block");
+					} else {
+						//hide loading
+						element.find('div').css("display", "none");
+					}
+
+				});
+			}
+
 			return {
-				templateUrl: 'loader/itemsloaderindicator.template.html'
+				templateUrl: 'loader/itemsloaderindicator.template.html',
+				link : link
 			}
 		})
 		.constant('BASE_URL', 'https://davids-restaurant.herokuapp.com');
@@ -17,11 +33,15 @@
 	function NarrowItDownController($scope, narrowItDownService) {
 		var list = this;
 
+		list.loading = false;
+
 		list.foundItems = [];
 		list.narrowItDown = function() {
+			list.loading = true;
 			narrowItDownService.getMatchedMenuItems(list.searchTerm).then(function(foundItems)
 				{
 					list.foundItems = foundItems;
+					list.loading = false;
 				});
 		};
 
