@@ -9,6 +9,7 @@
 
 			function link(scope, element, attributes) {
 				console.log(scope);
+				/*
 				scope.$watch("list.loading", function(newValue, oldValue) {
 					if (newValue) {
 						//show loader
@@ -19,6 +20,7 @@
 					}
 
 				});
+				*/
 			}
 
 			return {
