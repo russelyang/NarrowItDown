@@ -1,5 +1,5 @@
 {
-  "name": "lunchchecker",
+  "name": "NarrowItDown",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,16 +10,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/russelyang/LunchCheck.git"
+    "url": "git+https://github.com/russelyang/NarrowItDown.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/russelyang/LunchCheck/issues"
+    "url": "https://github.com/russelyang/LunchChecNarrowItDown/issues"
   },
-  "homepage": "https://github.com/russelyang/LunchCheck#readme",
+  "homepage": "https://github.com/russelyang/LunchChecNarrowItDown#readme",
   "devDependencies": {
     "concurrently": "^3.1.0",
-    "lite-server": "^2.2.2"
+    "karma": "^1.3.0",
+    "lite-server": "^2.2.2",
+    "phantomjs": "^2.1.7"
   }
 }
