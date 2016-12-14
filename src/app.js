@@ -1,6 +1,6 @@
 (function () {
 	'use strict';
-	
+
 	angular.module('NarrowItDownApp', [])
 		.controller('NarrowItDownController', NarrowItDownController)
 		.service('NarrowItDownService', NarrowItDownService)
@@ -71,6 +71,8 @@
 	function FoundItemsDirectiveController() {
 
 	}
+
+
 
 	NarrowItDownService.$inject = ["$http", "BASE_URL"];
 	function NarrowItDownService($http, BASE_URL, $q) {
