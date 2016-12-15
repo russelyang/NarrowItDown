@@ -20,6 +20,7 @@
   "homepage": "https://github.com/russelyang/LunchChecNarrowItDown#readme",
   "devDependencies": {
     "@types/angular": "^1.5.21",
+    "@types/angular-mocks": "^1.5.8",
     "@types/jasmine": "^2.5.38",
     "concurrently": "^3.1.0",
     "jasmine-core": "^2.5.2",
@@ -27,7 +28,9 @@
     "karma-chrome-launcher": "^2.0.0",
     "karma-jasmine": "^1.1.0",
     "karma-phantomjs-launcher": "^1.0.2",
+    "karma-typescript": "^2.1.4",
     "lite-server": "^2.2.2",
-    "phantomjs": "^2.1.7"
+    "phantomjs": "^2.1.7",
+    "typescript": "^2.1.4"
   }
 }
