@@ -32,5 +32,8 @@
     "lite-server": "^2.2.2",
     "phantomjs": "^2.1.7",
     "typescript": "^2.1.4"
+  },
+  "dependencies": {
+    "karma-coverage": "^1.1.1"
   }
 }
